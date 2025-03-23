@@ -3,7 +3,7 @@ import { GitHubLabel } from "../interfaces/github-label.interface";
 import { environment } from "src/environments/environment.development";
 
 const BASE_URL = environment.baseUrl;
-const TOKEN = environment.gitHubToken;
+const TOKEN = environment.tk;
 
 export const getLabels = async (): Promise<GitHubLabel[]> => {
 

@@ -3,7 +3,7 @@ import { environment } from "src/environments/environment.development";
 import { GitHubIssues } from "../interfaces";
 
 const BASE_URL = environment.baseUrl;
-const TOKEN = environment.gitHubToken;
+const TOKEN = environment.tk;
 
 export const getIssueCommentsByNumber = async (issueNumber: string): Promise<GitHubIssues[]> => {
 
