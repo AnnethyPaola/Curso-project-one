@@ -1,5 +1,5 @@
 import { sleep } from "@helpers/sleep";
-import { environment } from "src/environments/environment.development";
+import { environment } from "src/environment/environment.development";
 import { GitHubIssues } from "../interfaces";
 
 const BASE_URL = environment.baseUrl;
