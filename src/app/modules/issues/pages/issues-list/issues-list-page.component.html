@@ -13,15 +13,25 @@
 
 
     <div class="mt-4 flex flex-col col-span-2">
-        <h3>Issues:</h3>
-        <a routerLink="/issues/123">Ir a issues 123</a>
+        @for (issue of issuesQuery.data(); track issue.id) {
+
+        <issues-item [issue]="issue" />
+
+        } @empty {
+        @if (issuesQuery.isLoading()) {
+        <p>CARGANDO ISSUES</p>
+        }@else {
+        <p>NO HAY ISSUES PARA MOSTRAR</p>
+        }
+        }
 
     </div>
 
     <div>
-        <h3>Labels</h3>
-
+        @if(labelQuery.isLoading()){
+        <p>ESTAMOS CARGANDO</p>
+        }@else {
+        <issues-labels-selector [labels]="labelQuery.data() ?? []" />
+        }
     </div>
-
-
 </section>
